@@ -72,7 +72,7 @@ function showInterviewJobs() {
     interviewCards.innerHTML = `
       <div class="flex flex-col items-center text-center">
         <div><img src="jobs.png" alt="" /></div>
-        <h1>No Jobs in Interview</h1>
+        <h1 class="text-xl font-bold">No Jobs in Interview</h1>
         <p>Check back soon for new opportunities</p>
       </div>
     `;
@@ -90,7 +90,7 @@ function showRejectedJobs() {
     rejectedCards.innerHTML = `
       <div class="flex flex-col items-center text-center">
         <div><img src="jobs.png" alt="" /></div>
-        <h1>No Rejected Jobs</h1>
+        <h1 class="text-xl font-bold">No Rejected Jobs</h1>
         <p>Thanks for visiting.</p>
       </div>
     `;
