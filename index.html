@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Tracker</title>
+
+  <!-- daisyUi+Tailwind -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@5"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- font family -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- font awesome -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    * {
+      font-family: "Geist", sans-serif;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <section class="nav">
+      <div
+        class="navbar bg-base-100 shadow-sm grid grid-cols-1 max-w-[1100px] max-h-[149px] mx-auto"
+      >
+        <h2 class="text-2xl font-bold">Job Application Tracker</h2>
+        <div class="count-section grid grid-cols-3">
+          <div class="stats shadow max-w-[359.33px]">
+            <div class="stat">
+              <div class="stat-title">Total</div>
+              <div id="total" class="stat-value text-[20px]">0</div>
+            </div>
+          </div>
+          <div class="stats shadow max-w-[359.33px]">
+            <div class="stat">
+              <div class="stat-title">Interview</div>
+              <div id="interview" class="stat-value text-[20px] text-green-700">
+                0
+              </div>
+            </div>
+          </div>
+          <div class="stats shadow max-w-[359.33px]">
+            <div class="stat">
+              <div class="stat-title">Rejected</div>
+              <div id="rejected" class="stat-value text-[20px] text-red-700">
+                0
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="job">
+      <div class="bg-base-200 min-h-screen max-w-[1100px] mx-auto">
+        <div class="upper-section flex justify-between">
+          <div><h3 class="font-bold">Available Jobs</h3></div>
+          <div>
+            <p id="small-total" class="text-sm text-gray-700">
+              <span>0</span> Jobs
+            </p>
+          </div>
+        </div>
+        <div class="toogle-btn">
+          <button id="allBtn" class="btn btn-soft btn-primary">All</button>
+          <button id="interview-btn" class="btn btn-soft btn-primary">
+            Interview
+          </button>
+          <button id="rejected-btn" class="btn btn-soft btn-primary">
+            Rejected
+          </button>
+        </div>
+        <section id="interview-section" class="space-y-6 hidden">
+          <div class="flex flex-col items-center text-center">
+            <div><img src="jobs.png" alt="" /></div>
+            <h1>No Jobs Available</h1>
+            <p>Check back soon for new oppurtunities</p>
+          </div>
+        </section>
+        <section id="rejected-section" class="space-y-6 hidden">
+          <div class="flex flex-col items-center text-center">
+            <div><img src="jobs.png" alt="" /></div>
+            <h1>No Job Rejected</h1>
+            <p>Thanks for the visiting.</p>
+          </div>
+        </section>
+        <section id="job-section" class="space-y-6">
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">WebFlow Agency</h2>
+                    <p>Web Designer & Dev</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>Remote - Part-time - $80k-$120k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>Create stunning web experiences for high-profile clients.</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">TechStream Inc</h2>
+                    <p>Frontend Engineer</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>New York - Full-time - $110k-$160k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>
+                  Developing scalable UI components using Vue.js and Tailwind.
+                </p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">Pixel Perfect</h2>
+                    <p>UI/UX Designer</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>London, UK - Contract - $90k - $130k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>Leading the redesign of our core SaaS dashboard product.</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">CloudScale AI</h2>
+                    <p>Backend Architect</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>Austin, TX - Full-time - $150k-$210k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>Optimizing high-traffic Node.js microservices on AWS.</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">Greenlight Fin</h2>
+                    <p>Full Stack Developerv</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>Remote - Full-time - $125k-$180k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>Defining roadmap strategy for global streaming platforms.</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">CyberCore Ltd</h2>
+                    <p>Security Analyst</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>Chicago, IL - Hybrid - $100k-$155k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>
+                  Monitoring network infrastructure for vulnerabilities and
+                  threats.
+                </p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">DataPulse Analytics</h2>
+                    <p>Senior Data Scientist</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>RBoston, MA - Hybrid - $160,000-$205,000</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>
+                  Implementing machine learning models to predict consumer
+                  behavior and market trends.
+                </p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="job-cards">
+            <div class="card bg-base-100 card-sm shadow-sm max-w-[1100px]">
+              <div class="card-body">
+                <div class="flex justify-between max-w-[1062px]">
+                  <div>
+                    <h2 class="card-title">WebFlow Agency</h2>
+                    <p>Web Designer & Dev</p>
+                  </div>
+                  <div><i class="fa-solid fa-trash cursor-pointer"></i></div>
+                </div>
+                <p>Remote - Part-time - $80k-$120k</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-soft font-normal">NOT APPLIED</button>
+                </div>
+                <p>Create stunning web experiences for high-profile clients.</p>
+                <div class="justify-start card-actions">
+                  <button class="btn btn-outline btn-success">INTERVIEW</button>
+                  <button class="btn btn-outline btn-error">REJECTED</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- javascript -->
+    <script src="./script/script.js"></script>
+  </body>
+</html>
